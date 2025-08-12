@@ -1,7 +1,7 @@
 export abstract class CustomError extends Error {
   abstract statusCode: number;
 
-  constructor(message: string) {
+  protected constructor(message: string) {
     super(message);
 
     Object.setPrototypeOf(this, CustomError.prototype);
@@ -9,6 +9,6 @@ export abstract class CustomError extends Error {
 
   abstract serializeErrors(): {
     message: string;
-    feild?: string;
+    field?: string;
   }[];
 }
